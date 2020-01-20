@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Horário</title>
+    <style>
+        body {
+            background: black;
+        }
+        #horario {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 300px;               
+            font: 10vh "Courier New", Monaco, monospace;
+            color: white;
+            transition: ease-in-out 2s;
+        }
+
+        #horario:hover {
+            cursor: pointer;
+            transform: translate(1vh, 2vh);             
+            
+        }
+    </style>
+</head>
+<body>
+    <h2 id="horario"></h2>
+</body>
+    <script>
+        var horario = document.getElementById("horario");
+
+        horario.innerHTML = new Date().toLocaleTimeString();
+        setInterval(function() {            
+            horario.innerHTML = new Date().toLocaleTimeString();
+        }, 1000);
+
+    </script>
+</html>
